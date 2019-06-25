@@ -1,0 +1,108 @@
+/**
+ * 旋转木马效果
+ * 开发者：李鸿耀
+ * 开发时间：2017/06/14
+ */
+
+@charset "utf-8";
+
+body, div, section, img {margin: 0; padding: 0;}
+body { background-color: rgba(0, 0, 0, .95);}
+
+/*标题*/
+h1 {
+	text-align: center;
+	color: #fff;
+	text-shadow: 2px 2px 2px orange;
+}
+
+/*舞台*/
+.stage {
+	width: 150px;
+	height: 193px;
+	perspective: 600px;
+	margin: 100px auto;
+
+	/*定位*/
+	position: absolute;
+	top:  30%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-30%);
+}
+
+/*容器*/
+.wrap {
+	width: inherit;
+	height: inherit;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+/*图片*/
+.wrap img {
+	display: inline-block;
+	width: inherit;
+	height: inherit;
+	position: absolute;
+
+	transition: all .25s linear;
+	box-shadow: 1px 1px 1px 1px #fff;
+}
+
+.wrap img:nth-child(1) {
+	transform: rotateY(0deg) translateZ(calc(206px + 30px));
+}
+.wrap img:nth-child(2) {
+	transform: rotateY(40deg) translateZ(calc(206px + 30px));
+}
+.wrap img:nth-child(3) {
+	transform: rotateY(80deg) translateZ(calc(206px + 30px));
+}
+.wrap img:nth-child(4) {
+	transform: rotateY(120deg) translateZ(calc(206px + 30px));
+}
+.wrap img:nth-child(5) {
+	transform: rotateY(160deg) translateZ(calc(206px + 30px));
+}
+.wrap img:nth-child(6) {
+	transform: rotateY(200deg) translateZ(calc(206px + 30px));
+}
+.wrap img:nth-child(7) {
+	transform: rotateY(240deg) translateZ(calc(206px + 30px));
+}
+.wrap img:nth-child(8) {
+	transform: rotateY(280deg) translateZ(calc(206px + 30px));
+}
+.wrap img:nth-child(9) {
+	transform: rotateY(320deg) translateZ(calc(206px + 30px));
+}
+
+/*旋转动画设计*/
+@keyframes rotate-animation {
+	from {transform: rotateY(0deg);}
+	to {transform: rotateY(-360deg);}
+}
+/*速度*/
+.wrap {
+	animation: rotate-animation 10s linear infinite;
+}
+
+.wrap:hover {
+	animation-play-state: paused;
+}
+.wrap img:hover {
+	box-shadow: 1px 1px 5px 2px skyblue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
